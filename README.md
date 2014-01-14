@@ -1,4 +1,4 @@
 DTPDO
 =====
 
-extends php PDO functions and let you create CRUD query with arrays
+Extends php PDO functions and let you create CRUD query with arrays
