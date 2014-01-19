@@ -42,6 +42,7 @@ Insert a record in a table by a given array
 @param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
 
 es. 
+
     <?php
     
     $values= array(
