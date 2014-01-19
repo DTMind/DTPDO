@@ -26,12 +26,17 @@ In order to do our examples we need a table ...
 
 ... and a instance of the class in a php file. 
 
+    <?php
+
     include("DTPDO/DTPDO.class.php");
     
     $dbh = new DTPDO("mysql:host={$hostname};dbname={$dbname}", $username, $password);
     $dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );        
     $dbh->query("SET CHARSET 'utf8'");
 
+    [..]
+
+    ?>
 
 insertRecord($table, $param)
 ----------------------------
@@ -64,3 +69,15 @@ Update a record in a table by a ginen array
 * param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
 * param string/array $key
 
+es. 
+
+    <?php
+        
+     $values= array(
+                "age" => "62",
+                "city" => "Los Angeles"
+        );
+    
+    $dbh->updateRecord("user",$values);
+        
+    ?>
