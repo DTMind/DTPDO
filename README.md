@@ -24,7 +24,7 @@ In order to do our examples we need a table ...
     (3, 'Robert', 'Wilson', 52, 'Washington');
 
 
-... and a instance of the class in a php file.
+... and a instance of the class in a php file. 
 
     include("DTPDO/DTPDO.class.php");
     
