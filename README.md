@@ -22,6 +22,20 @@ Let's explain functions by exampes. Here after a table with 3 values:
     (3, 'Robert', 'Wilson', 52, 'Washington');
 
 
-1. function insertRecord($table, $param)
-----------------------------------------
+
+    include("DTPDO/DTPDO.class.php");
+    
+    $dbh = new DTPDO("mysql:host={$hostname};dbname={$dbname}", $username, $password);
+    $dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );        
+    $dbh->query("SET CHARSET 'utf8'");
+
+
+insertRecord($table, $param)
+----------------------------
+Insert a record in a table by a given array
+
+@param string $table: table name
+@param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
+
+es. 
 
