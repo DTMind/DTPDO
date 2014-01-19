@@ -38,7 +38,6 @@ insertRecord($table, $param)
 Insert a record in a table by a given array
 
 @param string $table: table name
-
 @param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
 
 es. 
