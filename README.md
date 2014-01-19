@@ -1,8 +1,9 @@
 DTPDO
 =====
 
-Extends php PDO functions and let you create CRUD query with arrays
+Extends php PDO functions and let you create CRUD query with arrays.
 
+Let's explain functionality by exampes
 
 
     CREATE TABLE IF NOT EXISTS `user` (
