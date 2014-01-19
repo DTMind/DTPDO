@@ -3,7 +3,9 @@ DTPDO
 
 Extends php PDO functions and let you create CRUD query with arrays.
 
-Let's explain functions by exampes. Here after a table with 3 values:
+Let's explain functions by exampes. 
+
+We have table with 3 values ...
 
 
     CREATE TABLE IF NOT EXISTS `user` (
@@ -22,6 +24,7 @@ Let's explain functions by exampes. Here after a table with 3 values:
     (3, 'Robert', 'Wilson', 52, 'Washington');
 
 
+... and a instance of the class
 
     include("DTPDO/DTPDO.class.php");
     
