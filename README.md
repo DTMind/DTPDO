@@ -73,11 +73,37 @@ es.
 
     <?php
         
-     $values= array(
+    $values= array(
+                "id" => 4,
                 "age" => "62",
                 "city" => "Los Angeles"
         );
     
-    $dbh->updateRecord("user",$values);
-        
+    $dbh->updateRecord("user",$values,"id");
+    
     ?>
+    
+    
+prepareInsertQuery($table, $param)
+----------------------------------
+Prepare an insert query by a ginen array
+
+* param string $table: table name
+* param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
+* return array(query,values)
+
+es. 
+
+
+
+
+prepareUpdateQuery($table, $param, $key)
+----------------------------------------
+Prepare an update query by a ginen array
+ 
+* param string $table: table name
+* param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
+* param string/array $key: table key
+* return array(query,values)
+
+ 
