@@ -5,7 +5,7 @@ Extends php PDO functions and let you create CRUD query with arrays.
 
 Let's explain functions by exampes. 
 
-We have table with 3 values ...
+In order to do our examples we need a table ...
 
 
     CREATE TABLE IF NOT EXISTS `user` (
@@ -24,7 +24,7 @@ We have table with 3 values ...
     (3, 'Robert', 'Wilson', 52, 'Washington');
 
 
-... and a instance of the class
+... and a instance of the class in a php file.
 
     include("DTPDO/DTPDO.class.php");
     
@@ -38,7 +38,9 @@ insertRecord($table, $param)
 Insert a record in a table by a given array
 
 @param string $table: table name
+
 @param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
 
 es. 
+
 
