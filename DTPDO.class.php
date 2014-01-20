@@ -71,7 +71,7 @@ class DTPDO extends PDO {
     }
 
     /**
-     * Insert a record in a table by a ginen array
+     * Insert a record in a table by a given array
      * 
      * @param string $table: table name
      * @param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
@@ -159,7 +159,7 @@ class DTPDO extends PDO {
     }
 
     /**
-     * Get an array of array, index is the first field of the query, array contains all the filds of the query
+     * Get an array of array, index is the first field of the query, array contains all the fields of the query
      * 
      * @param string $query
      * @return array
@@ -202,7 +202,7 @@ class DTPDO extends PDO {
 
 
         while ($row = $sth->fetch()) {
-            $myResult[] = $row[1];
+            $myResult[] = $row[0];
         }
 
         return $myResult;
