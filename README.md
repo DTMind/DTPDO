@@ -185,12 +185,12 @@ Function result (array):
 
     Array(
         0=> Array(
-                0 => 1
-                1 => John
-                2 => Smith
-                3 => 32
-                4 => Boston
-            );
+            0 => 1
+            1 => John
+            2 => Smith
+            3 => 32
+            4 => Boston
+        );
         1=> Array(
             0 => 2
             1 => James
@@ -217,6 +217,29 @@ Code: the first value is the key of the array
 
 Function result (array):
 
+    Array(
+        1=> Array(
+            id => 1
+            name => John
+            surname => Smith
+            age => 32
+            city => Boston
+        );
+        2=> Array(
+            id => 2
+            name => James
+            surname => Brown
+            age => 39
+            city => New York
+        );
+        3=> Array(
+            id => 3
+            name => Robert
+            surname => Wilson
+            age => 52
+            city => Washington
+        );
+    );
 
 prepareInsertQuery
 ------------------
