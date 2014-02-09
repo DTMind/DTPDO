@@ -92,6 +92,7 @@ getValue
 * return string : value of the first field of the first row
 
 es.
+
     <?php
     getValue("SELECT surname FROM user WHERE id=2")
     ?>
