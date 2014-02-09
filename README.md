@@ -93,11 +93,13 @@ getValue
 
 es.
 
+Code:
+
     <?php
     getValue("SELECT surname FROM user WHERE id=2")
     ?>
 
-Result
+Function result:
 
     Brown
 
@@ -112,10 +114,9 @@ getValues
 
 getListValue
 ------------
-`getListValue($query, $fetchMode = PDO::FETCH_NUM, $index = 1)`: Get an array of value, index is the first field of the query, value is the second field of the query
+`getListValue($query, $index = 1)`: Get an array of value, index is the first field of the query, value is the second field of the query
 
 * param string $query
-* param $fetchMode = PDO::FETCH_NUM
 * param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
 * return array
 
