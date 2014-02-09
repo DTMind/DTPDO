@@ -39,7 +39,7 @@ In order to do our examples we need a table ...
 
 insertRecord
 ------------
-insertRecord($table, $param)
+public function insertRecord($table, $param): 
 Insert a record in a table by a given array of values
 
 * param string $table: table name
