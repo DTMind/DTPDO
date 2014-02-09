@@ -1,12 +1,11 @@
 <?php
-
 /**
  * DTPDO Class <http://www.dtmind.com>
  * Extends php PDO functions and let you create CRUD query with arrays
  *
  * @version version 1.0, 15/01/2014
  * @author Stefano Oggioni <stefano.oggioni@dtmind.com>
- * @copyright Copyright 2014 - DTMind
+ * @copyright 2014 - DTMind
  * @link http://www.dtmind.com
  * @license The MIT License (MIT)
  *
