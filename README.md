@@ -44,7 +44,7 @@ insertRecord
 * param string $table: table name
 * param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
 
-es. 
+##### example #1
 
     <?php
     
@@ -68,7 +68,7 @@ updateRecord
 * param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
 * param string/array $key
 
-es. 
+##### example #2
 
     <?php
         
@@ -91,7 +91,7 @@ getValue
 * param string $fetchMode = PDO::FETCH_NUM
 * return string : value of the first field of the first row
 
-##### example #1
+##### example #3
 Code:
 
     <?php
@@ -111,7 +111,7 @@ getValues
 * return array : vector of values of the query of the first row
 
 
-##### example #2
+##### example #4
 Code:
 
     <?php
@@ -136,7 +136,7 @@ getListValue
 * param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
 * return array
 
-##### example #3
+##### example #5
 Code: the index is the id value
 
     <?php
@@ -150,7 +150,7 @@ Function result (array):
         3 => Robert
     );
 
-##### example #4
+##### example #6
 Code: the index is an incremental value
 
     <?php
@@ -173,6 +173,49 @@ getListValues
 * param $fetchMode = PDO::FETCH_NUM
 * param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
 * return array
+
+##### example #7
+Code: the array as an incremental index
+
+    <?php
+        getListValues("SELECT * FROM user")
+    ?>
+
+Function result (array):
+
+    Array(
+        0=> Array(
+                0 => 1
+                1 => John
+                2 => Smith
+                3 => 32
+                4 => Boston
+            );
+        1=> Array(
+            0 => 2
+            1 => James
+            2 => Brown
+            3 => 39
+            4 => New York
+        );
+        2=> Array(
+            0 => 3
+            1 => Robert
+            2 => Wilson
+            3 => 52
+            4 => Washington
+        );
+    );
+
+
+##### example #8
+Code: the first value is the key of the array
+
+    <?php
+        getListValues("SELECT * FROM user",PDO::FETCH_ASSOC,1)
+    ?>
+
+Function result (array):
 
 
 prepareInsertQuery
