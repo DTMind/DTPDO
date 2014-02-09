@@ -91,6 +91,10 @@ getValue
 * param string $fetchMode = PDO::FETCH_NUM
 * return string : value of the first field of the first row
 
+es.
+    getValue("SELECT surname FROM user WHERE id=2")
+
+    Brown
 
 getValues
 ---------
@@ -133,7 +137,7 @@ prepareInsertQuery
 
 prepareUpdateQuery
 ------------------
-`prepareUpdateQuery($table, $param, $key)`: Prepare an update query by a ginen array
+`prepareUpdateQuery($table, $param, $key)`: Prepare an update query by a given array
  
 * param string $table: table name
 * param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 

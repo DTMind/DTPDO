@@ -143,10 +143,12 @@ class DTPDO extends PDO {
      * @param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
      * @return array
      */
-    public function getListValue($query, $fetchMode = PDO::FETCH_NUM, $index = 1) {
+    public function getListValue($query, $index = 1) {
 
-        $rows = $this->query($query);
-        $sth->setFetchMode($fetchMode);
+        $myResult = array();
+
+        $sth = $this->query($query);
+        $sth->setFetchMode(PDO::FETCH_NUM);
 
         while ($row = $sth->fetch()) {
 
@@ -169,11 +171,10 @@ class DTPDO extends PDO {
      */
     public function getListValues($query, $fetchMode = PDO::FETCH_NUM, $index = 0) {
 
+        $myResult = array();
+
         $sth = $this->query($query);
         $sth->setFetchMode($fetchMode);
-
-
-        $myResult = array();
 
         while ($row = $sth->fetch()) {
             $myValue = array();
