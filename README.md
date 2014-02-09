@@ -60,6 +60,7 @@ es.
     ?>
     
 ### updateRecord
+----------------
 `updateRecord($table, $param, $key)`: Update a record in a table by a ginen array
  
 * param string $table: table name
