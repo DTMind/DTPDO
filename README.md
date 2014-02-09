@@ -32,7 +32,6 @@ In order to do our examples we need a table ...
     
     $dbh = new DTPDO("mysql:host={$hostname};dbname={$dbname}", $username, $password);
     $dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );        
-    $dbh->query("SET CHARSET 'utf8'");
 
     [..]
 
@@ -83,7 +82,23 @@ es.
     
     ?>
     
-    
+
+getValue($query, $fetchMode = PDO::FETCH_NUM)
+---------------------------------------------
+
+
+getValues($query, $fetchMode = PDO::FETCH_NUM)
+----------------------------------------------
+
+
+getListValue($query, $fetchMode = PDO::FETCH_NUM, $index = 1)
+------------------------------------------------------------
+
+
+getListValues($query, $fetchMode = PDO::FETCH_NUM, $index = 0)
+--------------------------------------------------------------
+
+
 prepareInsertQuery($table, $param)
 ----------------------------------
 Prepare an insert query by a ginen array
@@ -91,8 +106,6 @@ Prepare an insert query by a ginen array
 * param string $table: table name
 * param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
 * return array(query,values)
-
-es. 
 
 
 
@@ -107,3 +120,13 @@ Prepare an update query by a ginen array
 * return array(query,values)
 
  
+FAQ
+===
+
+License
+-------
+The MIT License (MIT)
+
+Website
+-------
+http://www.dtmind.com

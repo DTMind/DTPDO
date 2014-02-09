@@ -75,6 +75,7 @@ class DTPDO extends PDO {
      * 
      * @param string $table: table name
      * @param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
+     * @return 
      */
     public function insertRecord($table, $param) {
 
@@ -88,6 +89,7 @@ class DTPDO extends PDO {
      * @param string $table: table name
      * @param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
      * @param string/array $key
+     * @return 
      */
     public function updateRecord($table, $param, $key) {
 
@@ -101,7 +103,7 @@ class DTPDO extends PDO {
      * @param string $query
      * @return string : value of the first field of the first row
      */
-    public function getValue($query, $fetchMode = PDO::FETCH_NUM, $index = 0) {
+    public function getValue($query, $fetchMode = PDO::FETCH_NUM) {
 
         $sth = $this->query($query);
         $sth->setFetchMode($fetchMode);
@@ -118,9 +120,9 @@ class DTPDO extends PDO {
      * Get an array of values from a given query
      * 
      * @param type $query
-     * @return array : vector of values of the query
+     * @return array : vector of values of the query of the first row
      */
-    public function getValues($query, $fetchMode = PDO::FETCH_NUM, $index = 0) {
+    public function getValues($query, $fetchMode = PDO::FETCH_NUM) {
 
         $sth = $this->query($query);
         $sth->setFetchMode($fetchMode);
@@ -137,21 +139,19 @@ class DTPDO extends PDO {
      * Get an array of value, index is the first field of the query, value is the second field of the query
      * 
      * @param string $query
-     * @param array $addValue: array to add
      * @return array
      */
-    public function getListValue($query, $addValue = array(), $fetchMode = PDO::FETCH_NUM, $index = 0) {
+    public function getListValue($query, $fetchMode = PDO::FETCH_NUM, $index = 1) {
 
         $rows = $this->query($query);
         $sth->setFetchMode($fetchMode);
 
-        if ($addValue == "")
-            $myResult = array();
-        else
-            $myResult = $addValue;
-
         while ($row = $sth->fetch()) {
-            $myResult[$row[0]] = $row[1];
+
+            if ($index == 0)
+                $myResult[] = $row[1];
+            else
+                $myResult[$row[0]] = $row[1];
         }
 
         return $myResult;
@@ -193,8 +193,6 @@ class DTPDO extends PDO {
 
         return $myResult;
     }
-
-
 
 }
 
