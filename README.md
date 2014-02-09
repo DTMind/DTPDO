@@ -62,7 +62,7 @@ es.
     
 updateRecord
 ------------
-Update a record in a table by a ginen array
+`updateRecord($table, $param, $key)`: Update a record in a table by a ginen array
  
 * param string $table: table name
 * param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
@@ -84,8 +84,8 @@ es.
     
 
 getValue
----------------------------------------------
- Get a value from a given query
+--------
+`getValue($query, $fetchMode = PDO::FETCH_NUM)`: Get a value from a given query
  
 * param string $query
 * param string $fetchMode = PDO::FETCH_NUM
@@ -93,8 +93,8 @@ getValue
 
 
 getValues
-----------------------------------------------
-Get an array of values from a given query
+---------
+`getValues($query, $fetchMode = PDO::FETCH_NUM)`: Get an array of values from a given query
 
 * param type $query
 * param string $fetchMode = PDO::FETCH_NUM
@@ -102,8 +102,8 @@ Get an array of values from a given query
 
 
 getListValue
-------------------------------------------------------------
-Get an array of value, index is the first field of the query, value is the second field of the query
+------------
+`getListValue($query, $fetchMode = PDO::FETCH_NUM, $index = 1)`: Get an array of value, index is the first field of the query, value is the second field of the query
 
 * param string $query
 * param $fetchMode = PDO::FETCH_NUM
@@ -112,8 +112,8 @@ Get an array of value, index is the first field of the query, value is the secon
 
 
 getListValues
---------------------------------------------------------------
-Get an array of array, index is the first field of the query, array contains all the fields of the query
+-------------
+`getListValues($query, $fetchMode = PDO::FETCH_NUM, $index = 0)`: Get an array of array, index is the first field of the query, array contains all the fields of the query
 
 * @param string $query
 * @param $fetchMode = PDO::FETCH_NUM
@@ -123,7 +123,7 @@ Get an array of array, index is the first field of the query, array contains all
 
 prepareInsertQuery
 ------------------
-Prepare an insert query by a ginen array
+`prepareInsertQuery($table, $param)`: Prepare an insert query by a ginen array
 
 * param string $table: table name
 * param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
@@ -133,7 +133,7 @@ Prepare an insert query by a ginen array
 
 prepareUpdateQuery
 ------------------
-Prepare an update query by a ginen array
+`prepareUpdateQuery($table, $param, $key)`: Prepare an update query by a ginen array
  
 * param string $table: table name
 * param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
