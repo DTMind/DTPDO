@@ -91,8 +91,7 @@ getValue
 * param string $fetchMode = PDO::FETCH_NUM
 * return string : value of the first field of the first row
 
-es.
-
+##### example #1
 Code:
 
     <?php
