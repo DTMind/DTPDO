@@ -111,15 +111,6 @@ getValues
 * return array : vector of values of the query of the first row
 
 
-getListValue
-------------
-`getListValue($query, $index = 1)`: Get an array of value, index is the first field of the query, value is the second field of the query
-
-* param string $query
-* param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
-* return array
-
-
 ##### example #2
 Code:
 
@@ -137,19 +128,16 @@ Function result (array):
         city => New York
     );
 
-
-getListValues
--------------
-`getListValues($query, $fetchMode = PDO::FETCH_NUM, $index = 0)`: Get an array of array, index is the first field of the query, array contains all the fields of the query
+getListValue
+------------
+`getListValue($query, $index = 1)`: Get an array of value, index is the first field of the query, value is the second field of the query
 
 * param string $query
-* param $fetchMode = PDO::FETCH_NUM
 * param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
 * return array
 
-
 ##### example #3
-Code:
+Code: the index is the id value
 
     <?php
         getListValue("SELECT * FROM user WHERE id>=2");
@@ -163,7 +151,7 @@ Function result (array):
     );
 
 ##### example #4
-Code:
+Code: the index is an incremental value
 
     <?php
         getListValue("SELECT * FROM user WHERE id>=2", 0);
@@ -175,6 +163,16 @@ Function result (array):
         0 => James
         1 => Robert
     );
+
+
+getListValues
+-------------
+`getListValues($query, $fetchMode = PDO::FETCH_NUM, $index = 0)`: Get an array of array, index is the first field of the query, array contains all the fields of the query
+
+* param string $query
+* param $fetchMode = PDO::FETCH_NUM
+* param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
+* return array
 
 
 prepareInsertQuery
