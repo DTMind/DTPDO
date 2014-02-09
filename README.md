@@ -37,7 +37,8 @@ In order to do our examples we need a table ...
 
     ?>
 
-## insertRecord
+insertRecord
+------------
 `insertRecord($table, $param)`: Insert a record in a table by a given array of values
 
 * param string $table: table name
@@ -59,8 +60,8 @@ es.
 
     ?>
     
-## updateRecord
-----------------
+updateRecord
+------------
 `updateRecord($table, $param, $key)`: Update a record in a table by a ginen array
  
 * param string $table: table name
