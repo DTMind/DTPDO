@@ -1,16 +1,16 @@
 <?php
-/**
-* DTPDO Class <http://www.dtmind.com>
-* Extends php PDO functions and let you create CRUD query with arrays
-*
-* @version version 1.0, 15/01/2014
-* @author Stefano Oggioni <stefano.oggioni@dtmind.com>
-* @copyright Copyright 2014 - DTMind
-* @link http://www.dtmind.com
-* @license GNU GENERAL PUBLIC LICENSE v.2
-*
-*/
 
+/**
+ * DTPDO Class <http://www.dtmind.com>
+ * Extends php PDO functions and let you create CRUD query with arrays
+ *
+ * @version version 1.0, 15/01/2014
+ * @author Stefano Oggioni <stefano.oggioni@dtmind.com>
+ * @copyright Copyright 2014 - DTMind
+ * @link http://www.dtmind.com
+ * @license The MIT License (MIT)
+ *
+ */
 class DTPDO extends PDO {
 
     /**
@@ -44,7 +44,7 @@ class DTPDO extends PDO {
      * @param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
      * @param string/array $key: table key
      * @return array(query,values)
-     */	
+     */
     public function prepareUpdateQuery($table, $param, $key) {
 
         $query1 = "";
@@ -100,11 +100,11 @@ class DTPDO extends PDO {
      * 
      * @param string $query
      * @return string : value of the first field of the first row
-     */	
-    public function getValue($query) {
+     */
+    public function getValue($query, $fetchMode = PDO::FETCH_NUM, $index = 0) {
 
         $sth = $this->query($query);
-        $sth->setFetchMode(PDO::FETCH_NUM);
+        $sth->setFetchMode($fetchMode);
 
         if ($sth->rowCount() == 0) {
             return NULL;
@@ -120,10 +120,10 @@ class DTPDO extends PDO {
      * @param type $query
      * @return array : vector of values of the query
      */
-    public function getValues($query) {
+    public function getValues($query, $fetchMode = PDO::FETCH_NUM, $index = 0) {
 
         $sth = $this->query($query);
-        $sth->setFetchMode(PDO::FETCH_NUM);
+        $sth->setFetchMode($fetchMode);
 
         if ($sth->rowCount() == 0) {
             return NULL;
@@ -140,16 +140,15 @@ class DTPDO extends PDO {
      * @param array $addValue: array to add
      * @return array
      */
-    public function loadValue($query, $addArray = array()) {
+    public function getListValue($query, $addValue = array(), $fetchMode = PDO::FETCH_NUM, $index = 0) {
 
-        $sth = $this->query($query);
-        $sth->setFetchMode(PDO::FETCH_NUM);
+        $rows = $this->query($query);
+        $sth->setFetchMode($fetchMode);
 
-        if ($addArray == "")
+        if ($addValue == "")
             $myResult = array();
         else
-            $myResult = $addArray;
-
+            $myResult = $addValue;
 
         while ($row = $sth->fetch()) {
             $myResult[$row[0]] = $row[1];
@@ -164,52 +163,39 @@ class DTPDO extends PDO {
      * @param string $query
      * @return array
      */
-    public function loadValues($query) {
+    public function getListValues($query, $fetchMode = PDO::FETCH_NUM, $index = 0) {
 
         $sth = $this->query($query);
-        $sth->setFetchMode(PDO::FETCH_NUM);
+        $sth->setFetchMode($fetchMode);
+
 
         $myResult = array();
 
         while ($row = $sth->fetch()) {
             $myValue = array();
 
-            for ($j = 0; $j < count($row); $j++)
-                $myValue[] = $row[$j];
+            if ($fetchMode == PDO::FETCH_NUM) {
+                for ($j = 0; $j < count($row); $j++)
+                    $myValue[] = $row[$j];
 
-            $myResult[$row[0]] = $myValue;
-        }
-
-        return $myResult;
-    }
-
-    /**
-     * Get an array of value, index is incremental int starting from 0, value is the second field of the query
-     * 
-     * @param string $query
-     * @param array $addArray: array to add
-     * @return array
-     */
-    public function loadValueWithoutIndex($query,$addArray=array()) {
-
-        $sth = $this->query($query);
-        $sth->setFetchMode(PDO::FETCH_NUM);
-
-        if ($addArray == "")
-            $myResult = array();
-        else
-            $myResult = $addArray;
-
-
-        while ($row = $sth->fetch()) {
-            $myResult[] = $row[0];
+                if ($index == 0)
+                    $myResult[] = $myValue;
+                else
+                    $myResult[$row[0]] = $myValue;
+            }
+            else {
+                if ($index == 0)
+                    $myResult[] = $row;
+                else
+                    $myResult[current($row)] = $row;
+            }
         }
 
         return $myResult;
     }
 
 
-    
+
 }
 
 ?>
