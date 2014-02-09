@@ -59,7 +59,7 @@ es.
 
     ?>
     
-### updateRecord
+## updateRecord
 ----------------
 `updateRecord($table, $param, $key)`: Update a record in a table by a ginen array
  
