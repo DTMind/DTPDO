@@ -83,17 +83,32 @@ es.
     ?>
     
 
-getValue($query, $fetchMode = PDO::FETCH_NUM)
+getValue
 ---------------------------------------------
+ Get a value from a given query
+ 
+* param string $query
+* param string $fetchMode = PDO::FETCH_NUM
+* return string : value of the first field of the first row
 
 
-getValues($query, $fetchMode = PDO::FETCH_NUM)
+getValues
 ----------------------------------------------
+Get an array of values from a given query
+
+* param type $query
+* param string $fetchMode = PDO::FETCH_NUM
+* return array : vector of values of the query of the first row
 
 
 getListValue($query, $fetchMode = PDO::FETCH_NUM, $index = 1)
 ------------------------------------------------------------
+Get an array of value, index is the first field of the query, value is the second field of the query
 
+* param string $query
+* param $fetchMode = PDO::FETCH_NUM
+* param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
+* return array
 
 getListValues($query, $fetchMode = PDO::FETCH_NUM, $index = 0)
 --------------------------------------------------------------
