@@ -115,10 +115,10 @@ getListValues
 -------------
 `getListValues($query, $fetchMode = PDO::FETCH_NUM, $index = 0)`: Get an array of array, index is the first field of the query, array contains all the fields of the query
 
-* @param string $query
-* @param $fetchMode = PDO::FETCH_NUM
-* @param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
-* @return array
+* param string $query
+* param $fetchMode = PDO::FETCH_NUM
+* param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
+* return array
 
 
 prepareInsertQuery
