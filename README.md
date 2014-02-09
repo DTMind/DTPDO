@@ -96,7 +96,7 @@ es.
 Code:
 
     <?php
-    getValue("SELECT surname FROM user WHERE id=2")
+        getValue("SELECT surname FROM user WHERE id=2")
     ?>
 
 Function result:
