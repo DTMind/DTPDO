@@ -95,7 +95,7 @@ getValue
 Code:
 
     <?php
-        getValue("SELECT surname FROM user WHERE id=2")
+        getValue("SELECT surname FROM user WHERE id=2");
     ?>
 
 Function result:
@@ -118,6 +118,26 @@ getListValue
 * param string $query
 * param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
 * return array
+
+
+##### example #2
+Code:
+
+    <?php
+
+        getValues("SELECT * FROM user WHERE id=2",PDO::FETCH_ASSOC);
+
+    ?>
+
+Function result (array):
+
+    Array(
+        id => 2
+        name => James
+        surname => Brown
+        age => 39
+        city => New York
+    );
 
 
 getListValues
