@@ -101,7 +101,7 @@ Get an array of values from a given query
 * return array : vector of values of the query of the first row
 
 
-getListValue($query, $fetchMode = PDO::FETCH_NUM, $index = 1)
+getListValue
 ------------------------------------------------------------
 Get an array of value, index is the first field of the query, value is the second field of the query
 
@@ -110,12 +110,19 @@ Get an array of value, index is the first field of the query, value is the secon
 * param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
 * return array
 
-getListValues($query, $fetchMode = PDO::FETCH_NUM, $index = 0)
+
+getListValues
 --------------------------------------------------------------
+Get an array of array, index is the first field of the query, array contains all the fields of the query
+
+* @param string $query
+* @param $fetchMode = PDO::FETCH_NUM
+* @param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
+* @return array
 
 
-prepareInsertQuery($table, $param)
-----------------------------------
+prepareInsertQuery
+------------------
 Prepare an insert query by a ginen array
 
 * param string $table: table name
@@ -124,9 +131,8 @@ Prepare an insert query by a ginen array
 
 
 
-
-prepareUpdateQuery($table, $param, $key)
-----------------------------------------
+prepareUpdateQuery
+------------------
 Prepare an update query by a ginen array
  
 * param string $table: table name
