@@ -124,9 +124,7 @@ getListValue
 Code:
 
     <?php
-
         getValues("SELECT * FROM user WHERE id=2",PDO::FETCH_ASSOC);
-
     ?>
 
 Function result (array):
@@ -148,6 +146,35 @@ getListValues
 * param $fetchMode = PDO::FETCH_NUM
 * param $index = 1, "1" array key is the first value of the quesry, "0" array key is incremental
 * return array
+
+
+##### example #3
+Code:
+
+    <?php
+        getListValue("SELECT * FROM user WHERE id>=2");
+    ?>
+
+Function result (array):
+
+    Array(
+        2 => James
+        3 => Robert
+    );
+
+##### example #4
+Code:
+
+    <?php
+        getListValue("SELECT * FROM user WHERE id>=2", 0);
+    ?>
+
+Function result (array):
+
+    Array(
+        0 => James
+        1 => Robert
+    );
 
 
 prepareInsertQuery
