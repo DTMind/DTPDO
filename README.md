@@ -39,8 +39,7 @@ In order to do our examples we need a table ...
 
 insertRecord
 ------------
-public function insertRecord($table, $param): 
-Insert a record in a table by a given array of values
+insertRecord($table, $param): Insert a record in a table by a given array of values
 
 * param string $table: table name
 * param array $param: associative array ("field1" => "value 1", ..., "fieldn" => "value n") 
