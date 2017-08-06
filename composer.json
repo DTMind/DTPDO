@@ -1,7 +1,5 @@
 {
     "name": "dtmind/dtpdo",
-    "version": "1.0.0",    
-    "minimum-stability": "dev",
     "type": "library",
     "description": "DTPDO class",
     "keywords": ["pdo","model"],
