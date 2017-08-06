@@ -1,6 +1,7 @@
 {
     "name": "dtmind/dtpdo",
     "version": "1.0.0",    
+    "version": "library",
     "description": "DTPDO class",
     "keywords": ["pdo","model"],
     "homepage": "http://www.dtmind.com/dtpdo/",    
