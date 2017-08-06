@@ -2,7 +2,7 @@
     "name": "dtmind/dtpdo",
     "version": "1.0.0",    
     "description": "DTPDO class",
-     "keywords": ["pdo","model"],
+    "keywords": ["pdo","model"],
     "homepage": "http://www.dtmind.com/dtpdo/",    
     "license": "MIT",
     "authors": [
