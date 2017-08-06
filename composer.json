@@ -1,0 +1,10 @@
+{
+    "name": "DTMind/DTPDO",
+    "description": "DTPDO class",
+    "authors": [
+        {
+            "name": "DTMind",
+            "email": "stefano.oggioni@dtmind.com"
+        }
+    ]
+}
