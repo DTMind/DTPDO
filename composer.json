@@ -7,5 +7,8 @@
             "name": "DTMind",
             "email": "stefano.oggioni@dtmind.com"
         }
-    ]
+    ],
+    "require": {
+        "php": ">5.3.3",
+    }    
 }
